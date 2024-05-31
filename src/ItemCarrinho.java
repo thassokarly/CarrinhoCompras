@@ -5,6 +5,10 @@ public class ItemCarrinho {
     private Produto produto;
     private int quantidade;
 
+    public ItemCarrinho(Produto produto) {
+        this.produto = produto;
+    }
+
     public ItemCarrinho(Produto produto, int quantidade) {
         this.produto = produto;
         this.quantidade = quantidade;
@@ -17,7 +21,10 @@ public class ItemCarrinho {
     public int getQuantidade() {
         return quantidade;
     }
-    public BigDecimal total(){
-        return null;
+    public void setQuantidade(int quantidade) {
+        this.quantidade = quantidade;
+    }
+    public BigDecimal getTotal(){
+        return produto.getPreco().multiply(BigDecimal.valueOf(quantidade));
     }
 }
